@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker - Gestionnaire d'études</title>
+    <link rel="stylesheet" href="style.css">
+     
+</head>
+<body>
+    <nav> 
+        <ul>
+            <li> <a  href=aboutus.html  class="link">about us</a></li>
+            <li> <a  href=contact.html class="link">contact </a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Header -->
+        <header  class="header"> 
+            <h1>📚 Study Tracker</h1>
+            <p>Suivez votre progression et organisez vos études</p>
+        </header>
+        <!-- Statistiques -->
+         <div class="stats-grid">
+            <div class="stat-card">
+            <div class="stat-content">
+                 <div>
+                    <div>
+                        <p class="stat-label">Ressources</p>
+                        <p class="stat-value" id="totalResources">0</p>
+                    </div>
+                   <img src="d75273e3bef4c45f0af58f547a945a35-removebg-preview.png" 
+     alt="Livres" 
+     class="stat-icon-img">
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div>
+                        <p class="stat-label">Terminées</p>
+                        <p class="stat-value green" id="completedResources">0</p>
+                    </div>
+                    <img src="4498aa1a32ab6c138b1b0b4d7f758f9c-removebg-preview.png"  
+     class="stat-icon-img"
+     alt="check mark" >
+                    <div>
+                        <p class="stat-label">Progression moy.</p>
+                        <p class="stat-value blue" id="avgProgress">0%</p>
+                    </div>
+                    <img src="60f474b79cefd249d7c65029e2df87af-removebg-preview.png"  
+     class="stat-icon-img"
+     alt="statique " >
+                </div>
+            </div>
+                <div class="stat-card">
+                <div class="stat-content">
+                    <div>
+                        <p class="stat-label">Temps total</p>
+                        <p class="stat-value purple" id="totalTime">0h</p>
+                    </div>
+                    <img src="5c0661db449fc10cfc80b1ceec8686b5-removebg-preview.png"
+     alt="Chronomètre" 
+     class="stat-icon-img">
+                </div>
+                </div>
+           
+
+        <!-- Navigation Tabs -->
+       <div class="tabs-container">
+            <div class="tabs">
+                <button class="glowing-button active"onclick="switchTab(' tab-resources')">
+                    📚 Ressources
+                </button>
+                <button class="glowing-button"onclick="switchTab('tab-todos')">
+                    ✅ To-Do List
+                </button>
+                <button class="glowing-button"onclick="switchTab('tab-timer')">
+                    ⏱️ Chronomètre
+                </button>
+                 
+            </div>
+       </div>
+
+
+
+
+            <!-- Contenu des tabs -->
+            <div class="tab-content">
+                <!-- TAB RESSOURCES -->
+                <div id="tab-resources" class="tab-panel active">
+                    <!-- Formulaire d'ajout -->
+                    <div class="add-form">
+                        <h3>Ajouter une ressource</h3>
+                        <div class="form-grid">
+                            <input 
+                                type="text" 
+                                id="resourceTitle" 
+                                placeholder="Titre (ex: Algorithmique Chap 3)"
+                                class="input"
+                            >
+                            <input 
+                                type="number" 
+                                id="resourcePages" 
+                                placeholder="Nombre de pages"
+                                min="1"
+                                class="input"
+                            >
+                            <button onclick="addResource()" class="btn btn-primary">
+                                ➕ Ajouter
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Liste des ressources -->
+                    <div id="resourcesList" class="resources-list">
+                        <p class="empty-message">Aucune ressource. Ajoutez-en une pour commencer !</p>
+                    </div>
+                </div>
+
+                <!-- TAB TO-DO LIST -->
+                <div id="tab-todos" class="tab-panel">
+                    <!-- Formulaire d'ajout -->
+                    <div class="add-form">
+                        <h3>Ajouter une tâche</h3>
+                        <div class="form-row">
+                            <input 
+                                type="text" 
+                                id="todoText" 
+                                placeholder="Nouvelle tâche..."
+                                class="input"
+                            >
+                            <button onclick="addTodo()" class="btn btn-primary">
+                                ➕ Ajouter
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Liste des tâches -->
+                    <div id="todosList" class="todos-list">
+                        <p class="empty-message">Aucune tâche. Ajoutez-en une !</p>
+                    </div>
+                </div>
+
+                <!-- TAB CHRONOMÈTRE -->
+                <div id="tab-timer" class="tab-panel">
+                    <div class="timer-container">
+                        <div class="timer-display" id="timerDisplay">00:00:00</div>
+                        <div class="timer-controls">
+                            <button id="startBtn" onclick="startTimer()" class="btn-timer btn-green">
+                                ▶️ Démarrer
+                            </button>
+                            <button id="pauseBtn" onclick="pauseTimer()" class="btn-timer btn-yellow" style="display:none;">
+                                ⏸️ Pause
+                            </button>
+                            <button onclick="resetTimer()" class="btn-timer btn-red">
+                                🔄 Réinitialiser
+                            </button>
+                        </div>
+
+                        <!-- Historique des sessions -->
+                        <div class="sessions-history">
+                            <h4>Dernières sessions</h4>
+                            <div id="sessionsList">
+                                <p class="empty-message">Aucune session enregistrée</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
