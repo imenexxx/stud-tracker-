@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Tracker - Gestionnaire d'études</title>
     <link rel="stylesheet" href="style.css">
-     
 </head>
 <body>
     <nav> 
@@ -22,68 +21,67 @@
         </header>
         <!-- Statistiques -->
          <div class="stats-grid">
-            <div class="stat-card">
-            <div class="stat-content">
-                 <div>
-                    <div>
-                        <p class="stat-label">Ressources</p>
-                        <p class="stat-value" id="totalResources">0</p>
-                    </div>
-                   <img src="d75273e3bef4c45f0af58f547a945a35-removebg-preview.png" 
-     alt="Livres" 
-     class="stat-icon-img">
-                </div>
+    <div class="stat-card">
+        <div class="stat-content">
+            <div>
+                <p class="stat-label">Ressources</p>
+                <p class="stat-value" id="totalResources">0</p>
             </div>
-            <div class="stat-card">
-                <div class="stat-content">
-                    <div>
-                        <p class="stat-label">Terminées</p>
-                        <p class="stat-value green" id="completedResources">0</p>
-                    </div>
-                    <img src="4498aa1a32ab6c138b1b0b4d7f758f9c-removebg-preview.png"  
-     class="stat-icon-img"
-     alt="check mark" >
-                    <div>
-                        <p class="stat-label">Progression moy.</p>
-                        <p class="stat-value blue" id="avgProgress">0%</p>
-                    </div>
-                    <img src="60f474b79cefd249d7c65029e2df87af-removebg-preview.png"  
-     class="stat-icon-img"
-     alt="statique " >
-                </div>
+            <img src="d75273e3bef4c45f0af58f547a945a35-removebg-preview.png" 
+                 alt="Livres"
+                 class="stat-icon-img">
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-content">
+            <div>
+                <p class="stat-label">Terminées</p>
+                <p class="stat-value green" id="completedResources">0</p>
             </div>
-                <div class="stat-card">
-                <div class="stat-content">
-                    <div>
-                        <p class="stat-label">Temps total</p>
-                        <p class="stat-value purple" id="totalTime">0h</p>
-                    </div>
-                    <img src="5c0661db449fc10cfc80b1ceec8686b5-removebg-preview.png"
-     alt="Chronomètre" 
-     class="stat-icon-img">
-                </div>
-                </div>
-           
+            <img src="4498aa1a32ab6c138b1b0b4d7f758f9c-removebg-preview.png"
+                 class="stat-icon-img">
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-content">
+            <div>
+                <p class="stat-label">Progression moy.</p>
+                <p class="stat-value blue" id="avgProgress">0%</p>
+            </div>
+            <img src="60f474b79cefd249d7c65029e2df87af-removebg-preview.png"
+                 class="stat-icon-img">
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-content">
+            <div>
+                <p class="stat-label">Temps total</p>
+                <p class="stat-value purple" id="totalTime">0h</p>
+            </div>
+            <img src="5c0661db449fc10cfc80b1ceec8686b5-removebg-preview.png"
+                 class="stat-icon-img">
+        </div>
+    </div>
+</div>
 
         <!-- Navigation Tabs -->
        <div class="tabs-container">
             <div class="tabs">
-                <button class="glowing-button active"onclick="switchTab(' tab-resources')">
+                <button class="glowing-button active" onclick="switchTab('tab-resources')">
                     📚 Ressources
                 </button>
-                <button class="glowing-button"onclick="switchTab('tab-todos')">
+                <button class="glowing-button" onclick="switchTab('tab-todos')">
                     ✅ To-Do List
                 </button>
-                <button class="glowing-button"onclick="switchTab('tab-timer')">
+                <button class="glowing-button" onclick="switchTab('tab-timer')">
                     ⏱️ Chronomètre
                 </button>
                  
             </div>
-       </div>
-
-
-
-
+        </div>
             <!-- Contenu des tabs -->
             <div class="tab-content">
                 <!-- TAB RESSOURCES -->
@@ -110,13 +108,11 @@
                             </button>
                         </div>
                     </div>
-
                     <!-- Liste des ressources -->
                     <div id="resourcesList" class="resources-list">
                         <p class="empty-message">Aucune ressource. Ajoutez-en une pour commencer !</p>
                     </div>
                 </div>
-
                 <!-- TAB TO-DO LIST -->
                 <div id="tab-todos" class="tab-panel">
                     <!-- Formulaire d'ajout -->
@@ -134,13 +130,11 @@
                             </button>
                         </div>
                     </div>
-
                     <!-- Liste des tâches -->
                     <div id="todosList" class="todos-list">
                         <p class="empty-message">Aucune tâche. Ajoutez-en une !</p>
                     </div>
                 </div>
-
                 <!-- TAB CHRONOMÈTRE -->
                 <div id="tab-timer" class="tab-panel">
                     <div class="timer-container">
@@ -156,7 +150,6 @@
                                 🔄 Réinitialiser
                             </button>
                         </div>
-
                         <!-- Historique des sessions -->
                         <div class="sessions-history">
                             <h4>Dernières sessions</h4>
@@ -169,7 +162,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
